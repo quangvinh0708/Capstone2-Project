@@ -8,7 +8,7 @@ setup(name='Questgen',
       packages=['Questgen', 'Questgen.encoding', 'Questgen.mcq'],
       url="https://github.com/ramsrigouthamg/Questgen.ai",
       install_requires=[
-         
+
            'torch==1.9.0',
            'transformers==3.0.2',
            'pytorch_lightning==0.8.1',
@@ -29,5 +29,6 @@ setup(name='Questgen',
            'flashtext==2.7',
            'pandas'
       ],
-      package_data={'Questgen': ['questgen.py', 'mcq.py', 'train_gpu.py', 'encoding.py']}
+      package_data={'Questgen': ['questgen.py',
+                                 'mcq.py', 'train_gpu.py', 'encoding.py']}
       )
