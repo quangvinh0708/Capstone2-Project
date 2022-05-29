@@ -32,9 +32,9 @@ def gen_ques_for_add_to_db(dataArr, txt, medium=True, high=False, combine_text=F
                    ' ' + texts_join + ' ' + text + ' '}
     output = qe.predict_boolq(payload)
     bool_questions = output['Boolean Questions']
-    bool_question1 = gen_questions(payload['input_text'])
-    book_questions2 = generate_boolean_questions(payload['input_text'])
-    bool_questions += bool_question1 + book_questions2
+    # bool_question1 = gen_questions(payload['input_text'])
+    # book_questions2 = generate_boolean_questions(payload['input_text'])
+    # bool_questions += bool_question1 + book_questions2
 
     # if medium == True and combine_text == False:
     #     texts = textgen_rb_gen_text_by_text(txt)

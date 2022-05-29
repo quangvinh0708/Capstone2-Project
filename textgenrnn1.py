@@ -1,4 +1,5 @@
 from textgenrnn import textgenrnn
+import random
 
 textgen = textgenrnn.textgenrnn()
 # generated_texts = textgen.generate(
@@ -9,8 +10,9 @@ textgen = textgenrnn.textgenrnn()
 
 
 def textgen_rn(key):
+    random_temperature = float("{:.1f}".format(random.randrange(1, 11)*0.1))
     texts1 = textgen.generate(
-        n=5, prefix=key, temperature=0.2, return_as_list=True)
+        n=5, prefix=key, temperature=random_temperature, return_as_list=True)
     # texts2 = textgen.generate(n=5, prefix=key,
     #                           temperature=0.5, return_as_list=True)
     # return texts1 + texts2

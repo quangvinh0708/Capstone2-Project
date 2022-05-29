@@ -12,22 +12,34 @@ def replaceWord(w):
 #         print(replaceWord(x))
 
 
-def find_synonyms(arr):
+def find_synonyms(arr, upper=True):
     tag0 = []
     tag1 = []
     for ss in wordnet.synsets(arr[0]):
         for x in ss.lemma_names():
             w = replaceWord(x)
             if w.upper().strip() not in tag0:
-                tag0.append(w.upper().strip())
+                if upper == True:
+                    tag0.append(w.upper().strip())
+                else:
+                    tag0.append(w.title().strip())
 
     for ss in wordnet.synsets(arr[1]):
         for x in ss.lemma_names():
             w = replaceWord(x)
             if w.upper().strip() not in tag1:
-                tag1.append(w.upper().strip())
+                if upper == True:
+                    tag1.append(w.upper().strip())
+                else:
+                    tag1.append(w.title().strip())
     combine = tag0 + tag1
-    results = [x.upper() for x in arr if x.upper() not in combine] + combine
+    results = []
+    if upper == True:
+        results = [x.upper()
+                   for x in arr if x.upper() not in combine] + combine
+    else:
+        results = [x.title()
+                   for x in arr if x.upper() not in combine] + combine
     return results
 
 

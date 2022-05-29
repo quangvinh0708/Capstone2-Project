@@ -1,3 +1,4 @@
+import random
 import json
 
 f = open('words.json', "r")
@@ -10,3 +11,6 @@ def read_data(x=None):
 
 
 f.close()
+
+
+print(float("{:.1f}".format(random.randrange(1, 11)*0.1)))
